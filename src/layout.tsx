@@ -253,7 +253,7 @@ export function Page({ children, breadcrumbItems }: PageProps) {
                         src={data.user.avatar}
                         alt={data.user.name}
                       />
-                      <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                      <AvatarFallback className="rounded-lg">NP</AvatarFallback>
                     </Avatar>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-semibold">
@@ -280,7 +280,7 @@ export function Page({ children, breadcrumbItems }: PageProps) {
                           alt={data.user.name}
                         />
                         <AvatarFallback className="rounded-lg">
-                          CN
+                          NP
                         </AvatarFallback>
                       </Avatar>
                       <div className="grid flex-1 text-left text-sm leading-tight">
