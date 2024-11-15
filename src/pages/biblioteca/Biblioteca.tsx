@@ -1,13 +1,17 @@
 import { Separator } from "@/components/ui/separator";
 import { Card, CardTitle } from "@/components/ui/card";
 import { useBiblioteca } from "./api/useBiblioteca";
+import { Page } from "@/layout";
 
 export function Biblioteca() {
 
     const { biblioteca, reload } = useBiblioteca()
 
     return (
-        <>
+        <Page breadcrumbItems={[
+            { title: "Home", url: "/"},
+            { title: "Biblioteca", url: "/biblioteca"}
+        ]}>
             <div className="flex flex-col gap-4">
                 <p>Biblioteca</p>
                 <Separator />
@@ -26,6 +30,6 @@ export function Biblioteca() {
                     }) 
                 }
             </div>
-        </>
+        </Page>
     )
 }

@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import {
   AudioWaveform,
@@ -75,7 +73,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
+// Sample data.
 const data = {
   user: {
     name: "Nathalino Pacheco",
@@ -87,7 +85,7 @@ const data = {
       name: "Proj arquitetura de sistemas",
       logo: GalleryVerticalEnd,
       plan: "T200-11",
-    },  
+    },
   ],
   navMain: [
     {
@@ -98,15 +96,15 @@ const data = {
       items: [
         {
           title: "Alunos",
-          url: "#",
+          url: "/alunos",
         },
         {
           title: "Biblioteca",
-          url: "#",
+          url: "/biblioteca",
         },
         {
           title: "Disciplinas",
-          url: "#",
+          url: "/disciplinas",
         },
         {
           title: "Matrícula",
@@ -114,7 +112,7 @@ const data = {
         },
       ],
     },
-   
+
   ],
   projects: [
     {
@@ -135,7 +133,17 @@ const data = {
   ],
 }
 
-export default function Page({ children }: { children: React.ReactNode }) {
+interface BreadcrumbItemProps {
+  title: string;
+  url: string;
+}
+
+interface PageProps {
+  children: React.ReactNode;
+  breadcrumbItems: BreadcrumbItemProps[];
+}
+
+export function Page({ children, breadcrumbItems }: PageProps) {
   const [activeTeam, setActiveTeam] = React.useState(data.teams[0])
 
   return (
@@ -186,7 +194,7 @@ export default function Page({ children }: { children: React.ReactNode }) {
                       <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
                     </DropdownMenuItem>
                   ))}
-                  
+
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>
@@ -229,7 +237,7 @@ export default function Page({ children }: { children: React.ReactNode }) {
               ))}
             </SidebarMenu>
           </SidebarGroup>
-          
+
         </SidebarContent>
         <SidebarFooter>
           <SidebarMenu>
@@ -285,8 +293,8 @@ export default function Page({ children }: { children: React.ReactNode }) {
                       </div>
                     </div>
                   </DropdownMenuLabel>
-                  
-                  
+
+
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>
@@ -301,15 +309,19 @@ export default function Page({ children }: { children: React.ReactNode }) {
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbPage >
-                    Home
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-                {/* <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem> */}
+                {breadcrumbItems.map((item, index) => (
+                  <React.Fragment key={index}>
+                    <BreadcrumbItem>
+                      {index === breadcrumbItems.length - 1 ? (
+                        <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                      ) : (
+                        <BreadcrumbLink href={item.url}>{item.title}</BreadcrumbLink>
+                      )}
+                    </BreadcrumbItem>
+                    {index < breadcrumbItems.length - 1 && <BreadcrumbSeparator />}
+                  </React.Fragment>
+                ))}
+
               </BreadcrumbList>
             </Breadcrumb>
           </div>

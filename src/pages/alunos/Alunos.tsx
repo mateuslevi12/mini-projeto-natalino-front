@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import { useAlunos } from "./api/alunos";
 import { Card, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
+import { Page } from "@/layout";
 
 export function Alunos() {
 
@@ -14,7 +15,10 @@ export function Alunos() {
     })
 
     return (
-        <>
+        <Page breadcrumbItems={[
+            { title: 'Home', url: '/' },
+            { title: 'Alunos', url: '/alunos' }
+        ]}>
             <div className="flex flex-col gap-4">
                 <p>Alunos</p>
                 <div className="w-full flex gap-2">
@@ -44,6 +48,6 @@ export function Alunos() {
                     </Card>
                 }
             </div>
-        </>
+        </Page>
     )
 }

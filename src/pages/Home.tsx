@@ -1,10 +1,13 @@
 import { Card } from "@/components/ui/card";
+import { Page } from "@/layout";
 import { BookOpenText, IdCard, SquareLibrary, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Home() {
     return (
-        <>
+        <Page breadcrumbItems={[
+            { title: "Home", url: "/" },
+        ]}>
             <div className="flex flex-col gap-4">
                 <p>O que deseja ver?</p>
                 <div className="flex gap-4">
@@ -25,9 +28,11 @@ export function Home() {
                         <p>Biblioteca</p>
                     </div>
                     <div className="flex flex-col gap-2 items-center">
-                        <Card className="p-4 flex items-center justify-center cursor-pointer">
-                            <BookOpenText size={40} />
-                        </Card>
+                        <Link to="/disciplinas">
+                            <Card className="p-4 flex items-center justify-center cursor-pointer">
+                                <BookOpenText size={40} />
+                            </Card>
+                        </Link>
                         <p>Disciplinas</p>
                     </div>
                     <div className="flex flex-col gap-2 items-center">
@@ -38,6 +43,6 @@ export function Home() {
                     </div>
                 </div>
             </div>
-        </>
+        </Page>
     );
 }

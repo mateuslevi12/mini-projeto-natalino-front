@@ -1,5 +1,4 @@
 import { AppRoutes } from "./Routes"
-import Layout from "./layout"
 import { AuthProvider } from "./lib/AuthContext"
 
 export function App() {
@@ -7,9 +6,7 @@ export function App() {
   return (
     <>
       <AuthProvider>
-        <Layout>
-          <AppRoutes />
-        </Layout>
+        <AppRoutes />
       </AuthProvider>
     </>
   )
