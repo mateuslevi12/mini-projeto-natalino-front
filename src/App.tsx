@@ -1,5 +1,6 @@
 import { AppRoutes } from "./Routes"
 import { AuthProvider } from "./lib/AuthContext"
+import { Toaster } from "@/components/ui/toaster"
 
 export function App() {
 
@@ -7,6 +8,7 @@ export function App() {
     <>
       <AuthProvider>
         <AppRoutes />
+        <Toaster />
       </AuthProvider>
     </>
   )

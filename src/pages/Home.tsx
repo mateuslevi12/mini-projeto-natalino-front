@@ -14,7 +14,7 @@ export function Home() {
                     <div className="flex flex-col gap-2 items-center">
                         <Link to='/alunos'>
                             <Card className="p-4 flex items-center justify-center cursor-pointer">
-                                <Users size={40} />
+                                <Users size={64} />
                             </Card>
                         </Link>
                         <p>Alunos</p>
@@ -22,7 +22,7 @@ export function Home() {
                     <div className="flex flex-col gap-2 items-center">
                         <Link to="/biblioteca">
                             <Card className="p-4 flex items-center justify-center cursor-pointer">
-                                <SquareLibrary size={40} />
+                                <SquareLibrary size={64} />
                             </Card>
                         </Link>
                         <p>Biblioteca</p>
@@ -30,14 +30,14 @@ export function Home() {
                     <div className="flex flex-col gap-2 items-center">
                         <Link to="/disciplinas">
                             <Card className="p-4 flex items-center justify-center cursor-pointer">
-                                <BookOpenText size={40} />
+                                <BookOpenText size={64} />
                             </Card>
                         </Link>
                         <p>Disciplinas</p>
                     </div>
                     <div className="flex flex-col gap-2 items-center">
                         <Card className="p-4 flex items-center justify-center cursor-pointer">
-                            <IdCard size={40} />
+                            <IdCard size={64} />
                         </Card>
                         <p>Matrícula</p>
                     </div>
