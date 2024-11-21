@@ -1,9 +1,9 @@
 import { AsyncSearch } from "@/components/AsyncSearch";
 import { Card } from "@/components/ui/card";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Aluno, useAlunos } from "@/pages/alunos/api/alunos";
-import { GraduationCap, LibraryBig, TicketX } from "lucide-react";
+import { GraduationCap, TicketX } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -25,8 +25,6 @@ export function DialogMatricula({ type }: IMatriculaProps) {
     const [selectReserva, setSelectReserva] = useState<number>(0)
     const [nomeAluno, setNomeAluno] = useState('')
     console.log(nomeAluno)
-
-    const [open, setOpen] = useState(false)
 
     console.log(selectReserva)
 

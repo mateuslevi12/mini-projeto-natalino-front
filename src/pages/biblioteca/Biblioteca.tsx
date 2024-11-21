@@ -7,7 +7,7 @@ import { DialogReserva } from "./components/DialogReserva";
 import { BuscarReservados } from "./components/BuscarReservados";
 
 export function Biblioteca() {
-    const { biblioteca, reload } = useBiblioteca();
+    const { biblioteca } = useBiblioteca();
 
     return (
         <Page

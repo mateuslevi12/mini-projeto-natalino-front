@@ -1,12 +1,11 @@
 import { Label } from "@/components/ui/label";
-import { SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, Sheet } from "@/components/ui/sheet";
-import { Curso, useMatricula } from "../api/useMatricula";
+import { SheetTrigger, SheetContent, SheetHeader, SheetTitle, Sheet } from "@/components/ui/sheet";
+import { useMatricula } from "../api/useMatricula";
 import { Card } from "@/components/ui/card";
 import { ClipboardList } from "lucide-react";
 import { AsyncSearch } from "@/components/AsyncSearch";
 import { Aluno, useAlunos } from "@/pages/alunos/api/alunos";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export function DisciplinasMatriculados() {
@@ -14,7 +13,6 @@ export function DisciplinasMatriculados() {
     const alunosArray = Array.isArray(alunos) ? alunos : [];
 
     const [selectReserva, setSelectReserva] = useState<number>(0);
-    const [nomeAluno, setNomeAluno] = useState("");
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
     const { disciplinas, reload } = useMatricula({ alunoId: selectReserva });
@@ -23,7 +21,6 @@ export function DisciplinasMatriculados() {
         setIsSheetOpen(open);
         if (!open) {
             setSelectReserva(0);
-            setNomeAluno("");
             await reload();
         }
     };
@@ -47,7 +44,6 @@ export function DisciplinasMatriculados() {
                                 items={alunosArray}
                                 setBody={(aluno) => {
                                     setSelectReserva(aluno.selected.value);
-                                    setNomeAluno(aluno.selected.label);
                                 }}
                                 body={selectReserva}
                                 filterFunction={(aluno, inputValue) =>

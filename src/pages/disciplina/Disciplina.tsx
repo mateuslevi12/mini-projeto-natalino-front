@@ -5,7 +5,7 @@ import { Page } from "@/layout";
 
 export function Disciplina() {
 
-    const { disciplinas, reload } = useDisciplina()
+    const { disciplinas } = useDisciplina()
 
     return (
         <Page breadcrumbItems={[

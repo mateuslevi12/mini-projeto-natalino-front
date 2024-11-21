@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import {
     Sheet,
     SheetContent,
@@ -7,7 +6,6 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { useAlunos } from "@/pages/alunos/api/alunos"
 import { useEffect, useState } from "react"
 import { listReservados, Livro } from "../api/useBiblioteca"
 import { Label } from "@/components/ui/label"
@@ -15,13 +13,7 @@ import { Label } from "@/components/ui/label"
 
 export function ReservadoPor({ alunoId, open, nomeAluno }: { alunoId: number, nomeAluno: string, open: boolean }) {
 
-    const { alunos } = useAlunos({
-        search: alunoId
-    })
-
     console.log('alunoId', alunoId)
-
-    const aluno = !Array.isArray(alunos) ? alunos : null
 
     const [reservadosPor, setReservadosPor] = useState<Livro[]>()
 
