@@ -36,9 +36,11 @@ export function Home() {
                         <p>Disciplinas</p>
                     </div>
                     <div className="flex flex-col gap-2 items-center">
-                        <Card className="p-4 flex items-center justify-center cursor-pointer">
-                            <IdCard size={64} />
-                        </Card>
+                        <Link to="/matriculas">
+                            <Card className="p-4 flex items-center justify-center cursor-pointer">
+                                <IdCard size={64} />
+                            </Card>
+                        </Link>
                         <p>Matrícula</p>
                     </div>
                 </div>

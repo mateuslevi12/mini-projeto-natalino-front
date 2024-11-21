@@ -1,27 +1,12 @@
 import * as React from "react"
 import {
-  AudioWaveform,
-  BadgeCheck,
-  Bell,
-  BookOpen,
-  Bot,
   ChevronRight,
   ChevronsUpDown,
-  Command,
-  CreditCard,
-  Folder,
-  Forward,
   Frame,
   GalleryVerticalEnd,
-  LogOut,
   Map,
-  MoreHorizontal,
   PieChart,
-  Plus,
-  Settings2,
-  Sparkles,
   SquareTerminal,
-  Trash2,
 } from "lucide-react"
 
 import {
@@ -45,10 +30,8 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -62,7 +45,6 @@ import {
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
@@ -108,7 +90,7 @@ const data = {
         },
         {
           title: "Matrícula",
-          url: "#",
+          url: "/matriculas",
         },
       ],
     },

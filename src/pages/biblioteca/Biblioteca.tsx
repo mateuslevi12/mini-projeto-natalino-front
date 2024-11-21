@@ -3,15 +3,11 @@ import { Card, CardTitle } from "@/components/ui/card";
 import { useBiblioteca } from "./api/useBiblioteca";
 import { Page } from "@/layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookX, CalendarDays, LibraryBig } from "lucide-react";
 import { DialogReserva } from "./components/DialogReserva";
-import { ReservadoPor } from "./components/ReservadosPor";
 import { BuscarReservados } from "./components/BuscarReservados";
 
 export function Biblioteca() {
     const { biblioteca, reload } = useBiblioteca();
-
-
 
     return (
         <Page
